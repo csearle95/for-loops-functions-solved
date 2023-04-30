@@ -5,8 +5,15 @@
 
 export function getClientWithNoMoney(array) {
   // Your code goes here...
-
+  let brokeJokes = [];
+  for (let i = 0 ; i < array.length ; i++) {
+  if (array[i].balance === 0) {
+      brokeJokes.push(array[i].name);   
+  }
+ }
+ return brokeJokes;
 }
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-6"

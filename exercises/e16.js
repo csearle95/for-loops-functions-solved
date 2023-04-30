@@ -5,9 +5,22 @@
 // flatArrays([['d', 'r'], 'z', 'b', ['f', 'y']]) => ['d', 'r', 'z', 'b', 'f', 'y']
 // NOTE: You can NOT use the array.flat() method in your code
 
+
 export function flatArrays(array) {
   // Your code goes here...
 
+  let flatArray = []
+  for (let i = 0 ; i < array.length ; i++) {
+    if(Array.isArray(array[i])) {
+      var nestedArray = flatArrays(array[i]);
+      flatArray = flatArray.concat(nestedArray);
+    } else {
+      flatArray.push(array[i]);
+    }
+
+  }
+
+  return flatArray;
 }
 
 
