@@ -278,15 +278,61 @@ export const flatArraysData = [
 
 // console.log(reverseArray([1, 2, 3 ,4]))
 
-function separateNamesWithAFromRest(array) {
+// function separateNamesWithAFromRest(array) {
+//   // Your code goes here...
+//   let namesContainingA = [];
+//   let namesNotContainingA = [];
+  
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i].toLowerCase().indexOf("a") !== -1) {
+//       namesContainingA.push(array[i]);
+//     } else {
+//       namesNotContainingA.push(array[i]);
+//     }
+//   }
+  
+//   let result = [];
+//   result.push(namesContainingA);
+//   result.push(namesNotContainingA);
+  
+//   return result;
+// }
+// console.log(separateNamesWithAFromRest(["jon", "alice", "andrew", "mark", "jimmy"]))
+
+function findMinValueInArray(array) {
   // Your code goes here...
-  for (var i = 0 ; i < array.length ; i++) {
-    if (array[i] === value) {
-      return true 
+  if (array.length === 0) {
+    return undefined;
+  }
+
+  let minValue = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < minValue) {
+      minValue = array[i];
     }
   }
-    return false
 
+  return +minValue;
+
+  
 }
 
-console.log(separateNamesWithAFromRest(["jon", "alice", "andrew", "mark", "jimmy"]))
+function findMaxValueInArray(array) {
+  let maxValue = array[0];
+
+  for (let x = 0; x < array.length; x++) {
+    if (array[x] > maxValue) {
+      maxValue = array[x];
+    }
+  }
+
+  return +maxValue;
+}
+
+let numbers = [20, 24, 19, 26];
+let minValue = findMinValueInArray(numbers);
+let maxValue = findMaxValueInArray(numbers);
+
+console.log(minValue);
+console.log(maxValue);

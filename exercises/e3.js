@@ -42,17 +42,14 @@ export function getStringSum(str) {
     console.log(str[i]);
     if (!isNaN(str[i])) {
       arrayOfString.push(+str[i]);
-    } else {
-      console.log(str[i] + " is not a number");
     }
+
   }
   for (let x = 0; x < arrayOfString.length ; x++) {
     sum += arrayOfString[x];
   }  
   return sum;
 }
-console.log(getStringSum("GH2U87A"));
-getStringSum("GH2U87A");
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-3"
